@@ -32,7 +32,7 @@ public class Address {
 We could decorate (or attach metadata) to this class so that its text properties could be searched, like so:
 <pre>
 <code>
-public class Address{
+public class Address {
     ...
 
     [Haystack]
@@ -63,12 +63,12 @@ public class UsAddress : Address
 {
     internal class MetaData
     {
-            ...
-
-            [Haystack(isVisible: @"Country.Equals("USA")")]
-            public string AddressLine1 { get; set; }
-
-            ...
+        ...
+	    
+        [Haystack(isVisible: @"Country.Equals("USA")")]
+        public string AddressLine1 { get; set; }
+	    
+        ...
     }
 }
 </code>
@@ -79,13 +79,12 @@ Or, if you wanted to modify what is queried, you can use the Haystack attribute'
 <code>
 public class Address
 {
-        ...
-
-            [Haystack(queryRender: @"ZipCode.Substring(0,5)")]
-            public string ZipCode { get; set; }
-        
-        ...
-
+    ...
+    
+        [Haystack(queryRender: @"ZipCode.Substring(0,5)")]
+        public string ZipCode { get; set; }
+    
+    ...
 }
 </code>
 </pre>
