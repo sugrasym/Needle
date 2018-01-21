@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Needle</id>
+    <version>1.0.0</version>
+    <title>Needle</title>
+    <authors>SUGRA-SYM LLC</authors>
+    <owners>SUGRA-SYM LLC</owners>
+    <licenseUrl>https://github.com/sugrasym/Needle/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/sugrasym/Needle</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Data annotation based object mapper for C#</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags></tags>
+  </metadata>
+</package>
