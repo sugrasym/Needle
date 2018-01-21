@@ -20,6 +20,31 @@ namespace IMS.Common.Needle.Extensions
             return Needle.GetMatches(item, searchText);
         }
 
+        public static List<Match> FindMatches<T>(IQueryable<T> query, string searchText) where T : new()
+        {
+            var items = query.Search(searchText).ToList();
+
+            var matches = new List<Match>();
+            foreach (var item in items)
+            {
+                var itemMatches = item.FindMatches(searchText);
+                foreach (var match in itemMatches)
+                {
+                    var existingMatch = matches.FirstOrDefault(m => m.Path == match.Path &&
+                                                                    m.Value == match.Value);
+                    if (existingMatch == null)
+                    {
+                        existingMatch = match;
+                        matches.Add(existingMatch);
+                    }
+
+                    existingMatch.Count++;
+                }
+            }
+
+            return matches;
+        }
+
         public static IQueryable<T> FilterHaystack<T>(this IQueryable<T> item, List<Match> matches) where T : new()
         {
             return Needle.FilterHaystack(item, matches);
