@@ -14,7 +14,8 @@ Needle uses Haystack attributes. The Haystack attribute specifies if a field is 
 
 <pre>
 <code>
-public class Address {
+public class Address 
+{
     public int AddressId { get; set; }
     public string AddressLine1 { get; set; }
     public string AddressLine2 { get; set; }
@@ -32,7 +33,8 @@ public class Address {
 We could decorate (or attach metadata) to this class so that its text properties could be searched, like so:
 <pre>
 <code>
-public class Address {
+public class Address 
+{
     ...
 
     [Haystack]
@@ -81,8 +83,8 @@ public class Address
 {
     ...
     
-        [Haystack(queryRender: @"ZipCode.Substring(0,5)")]
-        public string ZipCode { get; set; }
+    [Haystack(queryRender: @"ZipCode.Substring(0,5)")]
+    public string ZipCode { get; set; }
     
     ...
 }
